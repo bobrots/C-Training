@@ -7,6 +7,8 @@
     and call the declared function with this value. 
     Also verify that the function works for an even number, for instance the value 6.
     Print the result to the console. 
+
+    Hint: the modulus operator can be used.
 */
 
 #include <iostream>
