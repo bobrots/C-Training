@@ -2,20 +2,17 @@
 /*
     Exercise 3:
 
-    Given the array defined in the main function, create a function that processes the array by counting
-    the number of items that are above 50 and sets the values to 0 if they are below 50.
-    
-    Print the result to the console using:
+    Given the array defined in the main function, create a function, using a separate header and cpp file and 
+    in the 'TMC' namespace, that processes the array by counting the number of items that are above 50 and sets 
+    the values to 0 if they are below 50. The count should be returned by the function. Print the result to 
+    the console using the standard character out, std::cout.
 
-        std::cout << "Numbers above 50: " << count << "\n";
-
-    where count is the variable name which contains the count. 
     To verify the number replacement worked correctly, print the first 5 elements to the console.
     
     Call the function in the main function. 
     
 
-    The result should be:
+    The result of the count and the first 5 elements after processing should be:
 
     Numbers above 50: 54
     50
@@ -23,33 +20,10 @@
     0
     0
     87
-    
 */
 
 #include <iostream>
-
-void ProcessArray(int arr[], int size)
-{
-    int count = 0;
-    for (int i = 0; i < size; ++i)
-    {
-        if (arr[i] > 50)
-        {
-            ++count;
-        }
-        if (arr[i] < 50)
-        {
-            arr[i] = 0;
-        }
-    }
-
-    std::cout << "Numbers above 50: " << count << "\n";
-
-    for (int i = 0; i < 5; ++i)
-    {
-        std::cout << arr[i] << "\n";
-    }
-}
+#include "Functions.h"
 
 int main()
 {
@@ -76,6 +50,13 @@ int main()
         59,	98,	24,	11,	40 
     };
 
-    ProcessArray(arr, 100);
+    int count{ TMC::ProcessArray(arr, 100) };
+
+    std::cout << "Numbers above 50: " << count << "\n";
+
+    for (int i = 0; i < 5; ++i)
+    {
+        std::cout << arr[i] << "\n";
+    }
 }
 
