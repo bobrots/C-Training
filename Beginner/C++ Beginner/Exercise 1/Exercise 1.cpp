@@ -2,24 +2,22 @@
 /*
     Exercise 1:
     
-    Create a function to converts the temperature from degrees Fahrenheit to degrees Celcius. 
-    Call this function from main and supply it the value 110 and store the result in a variable.
+    Create a header file and declare a function in the 'TMC' namespace which converts the 
+    temperature in °F to °C. Then in the main function, which is 
+    already defined, use this function to convert from 110 °F to °C. 
 
     Celcius = (Fahrenheit - 32) * 5 / 9
 
-    Print the result to the console. 
+    Print the result to the console by using the standard character out, std::cout. 
+    When converting from 110 °F the result should be 43.333 °C.
 */
 
 #include <iostream>
-
-float ConvertFahrenheitToCelcius(float fahrenheit)
-{
-    return (fahrenheit - 32) * 5 / 9;
-}
+#include "Functions.h"
 
 int main()
 {
-    float result{ ConvertFahrenheitToCelcius(110.f) };
+    float result{ TMC::ConvertFahrenheitToCelcius(110.f) };
 
     std::cout << "110 °F is equal to " << result << " °C\n";
 }
